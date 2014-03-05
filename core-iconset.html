@@ -12,7 +12,7 @@ license that can be found in the LICENSE file.
  *
  * Example:
  *
- *     <core-iconset id="my-icons" src="my-icons.png" width="96" iconsize="24"
+ *     <core-iconset id="my-icons" src="my-icons.png" width="96" iconSize="24"
  *         icons="location place starta stopb bus car train walk">
  *     </core-iconset>
  *
@@ -31,7 +31,7 @@ license that can be found in the LICENSE file.
 
 <link rel="import" href="../core-meta/core-meta.html">
 
-<polymer-element name="core-iconset" extends="core-meta" attributes="src width icons iconsize">
+<polymer-element name="core-iconset" extends="core-meta" attributes="src width icons iconSize">
   
   <script>
   
@@ -39,9 +39,9 @@ license that can be found in the LICENSE file.
   
       width: 0,
       icons: '',
-      iconsize: 0,
-      offsetx: 0,
-      offsety: 0,
+      iconSize: 0,
+      offsetX: 0,
+      offsetY: 0,
       type: 'iconset',
   
       ready: function() {
@@ -51,35 +51,37 @@ license that can be found in the LICENSE file.
           this.src = this.resolvePath(this.src, this.ownerDocument.baseURI);
         }
         this.super();
+        // TODO(sorvell): why is this needed?
         this.iconsChanged();
         this.updateThemes();
       },
 
       iconsChanged: function() {
         this.iconMap = {};
-        var ox = this.offsetx;
-        var oy = this.offsety;
+        var ox = this.offsetX;
+        var oy = this.offsetY;
         this.icons && this.icons.split(/\s+/g).forEach(function(name, i) {
           this.iconMap[name] = {
-            offsetx: ox,
-            offsety: oy
+            offsetX: ox,
+            offsetY: oy
           }
-          if (ox + this.iconsize < this.width) {
-            ox += this.iconsize;
+          if (ox + this.iconSize < this.width) {
+            ox += this.iconSize;
           } else {
-            ox = this.offsetx;
-            oy += this.iconsize;
+            ox = this.offsetX;
+            oy += this.iconSize;
           }
         }, this);
       },
 
+      // TODO(sorvell): why is theme supported here?
       updateThemes: function() {
         this.themes = {};
         var ts = this.querySelectorAll('property[theme]');
         ts && ts.array().forEach(function(t) {
           this.themes[t.getAttribute('theme')] = {
-            offsetx: parseInt(t.getAttribute('offsetx')) || 0,
-            offsety: parseInt(t.getAttribute('offsety')) || 0
+            offsetX: parseInt(t.getAttribute('offsetX')) || 0,
+            offsetY: parseInt(t.getAttribute('offsetY')) || 0
           };
         }, this);
       },
@@ -90,11 +92,23 @@ license that can be found in the LICENSE file.
         var t = this.themes[theme];
         if (i && t) {
           return {
-            offsetx: i.offsetx + t.offsetx,
-            offsety: i.offsety + t.offsety
+            offsetX: i.offsetX + t.offsetX,
+            offsetY: i.offsetY + t.offsetY
           }
         }
         return i;
+      },
+
+      applyAsBackground: function(node, icon, theme, scale) {
+         var offset = this.getOffset(icon, theme);
+         scale = scale || 1;
+         if (node && offset) {
+           node.style.backgroundImage = 'url(' + this.src + ')';
+           node.style.backgroundPosition = (-offset.offsetX * scale + 'px') + 
+              ' ' + (-offset.offsetY * scale + 'px');
+           node.style.backgroundSize = scale === 1 ? 'auto' :
+              this.width * scale + 'px';
+         }
       }
 
     });
