@@ -125,6 +125,7 @@ license that can be found in the LICENSE file.
 
       created: function() {
         this.iconMap = {};
+        this.iconNames = [];
         this.themes = {};
       },
   
@@ -142,6 +143,7 @@ license that can be found in the LICENSE file.
         var ox = this.offsetX;
         var oy = this.offsetY;
         this.icons && this.icons.split(/\s+/g).forEach(function(name, i) {
+          this.iconNames.push(name);
           this.iconMap[name] = {
             offsetX: ox,
             offsetY: oy
@@ -174,7 +176,8 @@ license that can be found in the LICENSE file.
        * offset. It's more common to use the `applyAsBackground` method.
        *
        * @method getOffset
-       * @param {String} icon The name of the icon.
+       * @param {String|Number} icon The name of the icon or the index of the
+       * icon within in the icon image.
        * @param {String} theme The name of the theme.
        * @returns {Object} An object specifying the offset of the given icon 
        * within the icon resource file; `offsetX` is the horizontal offset and
@@ -182,6 +185,10 @@ license that can be found in the LICENSE file.
        */
       getOffset: function(icon, theme) {
         var i = this.iconMap[icon];
+        if (!i) {
+          var n = this.iconNames[Number(icon)];
+          i = this.iconMap[n];
+        }
         var t = this.themes[theme];
         if (i && t) {
           return {
@@ -200,7 +207,7 @@ license that can be found in the LICENSE file.
        * @method applyAsBackground
        * @param {Element} element The element to which the background is
        * applied.
-       * @param {String} icon The name of the icon to apply.
+       * @param {String|Number} icon The name or index of the icon to apply.
        * @param {String} theme (optional) The name of the theme for the icon.
        * @param {Number} scale (optional, defaults to 1) A scaling factor 
        * with which the icon can be magnified.
