@@ -34,10 +34,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
  * This will automatically register the icon set "my-icons" to the iconset
  * database.  To use these icons from within another element, make a 
  * `core-iconset` element and call the `byId` method to retrieve a
- * given iconset. To apply a particular icon to an element as a backgroundImage,
- * the `applyAsBackground` method can be used. For example:
+ * given iconset. To apply a particular icon to an element, use the 
+ * `applyIcon` method. For example:
  *
- *     iconset.applyAsBackground(iconNode, 'car');
+ *     iconset.applyIcon(iconNode, 'car');
  *
  * Themed icon sets are also supported. The `core-iconset` can contain child
  * `property` elements that specify a theme with an offsetX and offsetY of the
@@ -50,7 +50,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
  *
  * Then a themed icon can be applied like this:
  *
- *     iconset.applyAsBackground(iconNode, 'car', 'special');
+ *     iconset.applyIcon(iconNode, 'car', 'special');
  *
  * @element core-iconset
  * @homepage github.io
@@ -176,7 +176,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        * specify the pixel locaion in the iconset's src file for the given
        * `icon` and `theme`. It's uncommon to call this method. It is useful,
        * for example, to manually position a css backgroundImage to the proper
-       * offset. It's more common to use the `applyAsBackground` method.
+       * offset. It's more common to use the `applyIcon` method.
        *
        * @method getOffset
        * @param {String|Number} icon The name of the icon or the index of the
@@ -207,7 +207,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        * method does not size the element, and it's often necessary to set 
        * the element's height and width so that the background image is visible.
        *
-       * @method applyAsBackground
+       * @method applyIcon
        * @param {Element} element The element to which the background is
        * applied.
        * @param {String|Number} icon The name or index of the icon to apply.

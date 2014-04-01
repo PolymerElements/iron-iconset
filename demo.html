@@ -10,20 +10,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <html>
 <head>
+
   <title>core-iconset</title>
 
   <script src="../platform/platform.js"></script>
   <link rel="import" href="core-iconset.html">
 
-  <style>
-    polymer-ui-menu {
-      width: 300px;
-    }
-  </style>
-
 </head>
-
 <body unresolved>
+  
   <!-- Register an icon set; you can do this anywhere, including an HTMLImport! -->
   <core-iconset id="my-icons" src="my-icons.png" width="96" iconSize="24"
       icons="location place starta stopb bus car train walk">
@@ -71,7 +66,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             this.style.height = this.style.width = iconset.iconSize + 'px';
             // use iconset's applyAsBackground method to set the given icon
             // as the element's background image.
-            iconset.applyAsBackground(this, icon);
+            iconset.applyIcon(this, icon);
           }
         }
 
