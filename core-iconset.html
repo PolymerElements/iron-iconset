@@ -215,7 +215,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        * @param {Number} scale (optional, defaults to 1) A scaling factor 
        * with which the icon can be magnified.
        */
-      applyAsBackground: function(element, icon, theme, scale) {
+      applyIcon: function(element, icon, theme, scale) {
          var offset = this.getOffset(icon, theme);
          scale = scale || 1;
          if (element && offset) {
