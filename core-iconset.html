@@ -56,13 +56,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
  * @homepage github.io
  */
 -->
-
+<link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../core-meta/core-meta.html">
+
 <dom-module id="core-iconset">
+
   <template>
     <core-meta type="iconset" key="[[name]]" value="[[self]]"></core-meta>
   </template>
+
 </dom-module>
+
 <script>
 Polymer({
   is: 'core-iconset',
