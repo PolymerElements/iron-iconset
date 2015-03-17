@@ -195,14 +195,14 @@ Polymer({
     // TODO(sorvell): ensure iconset's src is always relative to the main
     // document
     if (this.src && (this.ownerDocument !== document)) {
-      this.src = this.resolvePath(this.src, this.ownerDocument.baseURI);
+      this.src = this.resolveUrl(this.src);
     }
 
     this.updateThemes();
   },
 
   updateThemes: function () {
-    Polymer.dom.querySelectorAll('property[theme]', this)
+    Polymer.dom(this).querySelectorAll('property[theme]')
       .forEach(function (themeProperty) {
         var offsetX = window.parseInt(
           themeProperty.getAttribute('offset-x'), 10
@@ -216,21 +216,6 @@ Polymer({
           offsetY: offsetY
         };
       }, this);
-  },
-
-  // TODO(cdata): This is for compatibility. Remove this when equivalent
-  // lands in 0.8+.
-  resolvePath: function (urlPath, base) {
-    var assetPath = this.lightDom.getAttribute('assetpath') || '';
-    var url;
-
-    if (!base) {
-      base = new URL(assetPath, this.ownerDocument.baseURI)
-    }
-
-    url = new URL(urlPath, base);
-
-    return url.href;
   },
 
   // TODO(cdata): This is a strategy to enable multiple computed dependencies
@@ -357,7 +342,7 @@ Polymer({
     iconElement.setAttribute('role', 'img');
 
     if (iconElement.parentNode !== element._iconElement) {
-      Polymer.dom.appendChild(iconElement, element);
+      Polymer.dom(element).appendChild(iconElement);
     }
 
     return iconElement;
