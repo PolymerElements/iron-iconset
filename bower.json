@@ -3,10 +3,11 @@
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#0.8-preview",
-    "core-meta": "Polymer/core-meta#0.8-preview",
-    "core-icon": "Polymer/core-icon#0.8-preview"
+    "core-meta": "Polymer/core-meta#0.8-preview"
   },
   "devDependencies": {
-    "simple-fixture": "simple-elements/simple-fixture"
+    "test-fixture": "polymer/test-fixture",
+    "core-icon": "Polymer/core-icon#0.8-preview",
+    "web-component-tester": "~2.2.6"
   }
 }

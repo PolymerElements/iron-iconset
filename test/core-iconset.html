@@ -17,23 +17,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
   <script src="../../web-component-tester/browser.js"></script>
-  <script src="../../simple-fixture/simple-fixture-mocha.js"></script>
+  <script src="../../test-fixture/test-fixture-mocha.js"></script>
 
   <link rel="import" href="../core-iconset.html">
   <link rel="import" href="../../core-meta/core-meta.html">
-  <link rel="import" href="../../simple-fixture/simple-fixture.html">
+  <link rel="import" href="../../test-fixture/test-fixture.html">
 
 </head>
 <body>
 
-  <simple-fixture id="TrivialIconset">
+  <test-fixture id="TrivialIconset">
     <template>
       <core-iconset name="foo"></core-iconset>
       <core-meta type="iconset"></core-meta>
     </template>
-  </simple-fixture>
+  </test-fixture>
 
-  <simple-fixture id="StandardIconset">
+  <test-fixture id="StandardIconset">
     <template>
       <core-iconset name="my-icons"
                     src="../demo/my-icons.png"
@@ -42,20 +42,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     icons="location place starta stopb bus car train walk"></core-iconset>
       <div></div>
     </template>
-  </simple-fixture>
+  </test-fixture>
 
-  <simple-fixture id="ThemedIconset">
+  <test-fixture id="ThemedIconset">
     <template>
       <core-iconset name="my-icons"
                     src="../demo/my-icons.png"
                     width="96"
                     size="24"
                     icons="location place starta stopb bus car train walk">
-        <property theme="large" offsetx="10" offsety="10"></property>
+        <property theme="large" offset-x="10" offset-y="10"></property>
       </core-iconset>
       <div></div>
     </template>
-  </simple-fixture>
+  </test-fixture>
 
   <script>
 suite('<core-iconset>', function () {
