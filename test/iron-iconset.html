@@ -11,7 +11,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <html>
 <head>
 
-  <title>core-iconset</title>
+  <title>iron-iconset</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,8 +19,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script src="../../web-component-tester/browser.js"></script>
   <script src="../../test-fixture/test-fixture-mocha.js"></script>
 
-  <link rel="import" href="../core-iconset.html">
-  <link rel="import" href="../../core-meta/core-meta.html">
+  <link rel="import" href="../iron-iconset.html">
+  <link rel="import" href="../../iron-meta/iron-meta.html">
   <link rel="import" href="../../test-fixture/test-fixture.html">
 
 </head>
@@ -28,37 +28,37 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <test-fixture id="TrivialIconset">
     <template>
-      <core-iconset name="foo"></core-iconset>
-      <core-meta type="iconset"></core-meta>
+      <iron-iconset name="foo" src="../demo/my-icons.png"></iron-iconset>
+      <iron-meta type="iconset"></iron-meta>
     </template>
   </test-fixture>
 
   <test-fixture id="StandardIconset">
     <template>
-      <core-iconset name="my-icons"
+      <iron-iconset name="my-icons"
                     src="../demo/my-icons.png"
                     width="96"
                     size="24"
-                    icons="location place starta stopb bus car train walk"></core-iconset>
+                    icons="location place starta stopb bus car train walk"></iron-iconset>
       <div></div>
     </template>
   </test-fixture>
 
   <test-fixture id="ThemedIconset">
     <template>
-      <core-iconset name="my-icons"
+      <iron-iconset name="my-icons"
                     src="../demo/my-icons.png"
                     width="96"
                     size="24"
                     icons="location place starta stopb bus car train walk">
         <property theme="large" offset-x="10" offset-y="10"></property>
-      </core-iconset>
+      </iron-iconset>
       <div></div>
     </template>
   </test-fixture>
 
   <script>
-suite('<core-iconset>', function () {
+suite('<iron-iconset>', function () {
   suite('basic behavior', function () {
     var iconset;
     var meta;
@@ -70,11 +70,7 @@ suite('<core-iconset>', function () {
       meta = elements[1];
     });
 
-    teardown(function () {
-      meta.unregisterSelf();
-    });
-
-    test('it can be accessed via core-meta', function () {
+    test('it can be accessed via iron-meta', function () {
       expect(meta.byKey('foo')).to.be.equal(iconset);
     });
   });
@@ -90,6 +86,7 @@ suite('<core-iconset>', function () {
       div = elements[1];
     });
 
+/*
     test('appends a child to the target element', function () {
       expect(div.firstElementChild).to.not.be.ok;
 
@@ -97,12 +94,13 @@ suite('<core-iconset>', function () {
 
       expect(div.firstElementChild).to.be.ok;
     });
+*/
 
-    test('sets the background image of the child element', function () {
+    test('sets the background image of the target element', function () {
       var iconStyle;
 
       iconset.applyIcon(div, 'location');
-      iconStyle = window.getComputedStyle(div.firstElementChild);
+      iconStyle = window.getComputedStyle(div);
 
       expect(iconStyle.backgroundImage).to.match(/url\(.*demo\/my-icons.png\)/);
     });
@@ -111,7 +109,7 @@ suite('<core-iconset>', function () {
       var iconStyle;
 
       iconset.applyIcon(div, 'bus');
-      iconStyle = window.getComputedStyle(div.firstElementChild);
+      iconStyle = window.getComputedStyle(div);
 
       expect(iconStyle.backgroundPositionX).to.be.eql(
         '0px'
@@ -137,14 +135,14 @@ suite('<core-iconset>', function () {
     test('can use a theme when applying icon', function () {
       iconset.applyIcon(div, 'bus', 'large');
 
-      expect(div.firstElementChild).to.be.ok;
+      expect(div).to.be.ok;
     });
 
     test('adjusts the icon by the theme offset', function () {
       var iconStyle;
 
       iconset.applyIcon(div, 'bus', 'large');
-      iconStyle = window.getComputedStyle(div.firstElementChild);
+      iconStyle = window.getComputedStyle(div);
 
       expect(iconStyle.backgroundPositionX).to.be.eql(
         '-10px'
