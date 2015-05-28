@@ -1,6 +1,7 @@
 {
   "name": "iron-iconset",
   "version": "0.9.1",
+  "license": "http://polymer.github.io/LICENSE.txt",
   "description": "Represents a set of icons",
   "authors": [
     "The Polymer Authors"
