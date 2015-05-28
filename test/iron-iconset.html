@@ -103,7 +103,7 @@ suite('<iron-iconset>', function () {
       iconset.applyIcon(div, 'location');
       iconStyle = window.getComputedStyle(div);
 
-      expect(iconStyle.backgroundImage).to.match(/url\(.*demo\/my-icons.png\)/);
+      expect(iconStyle.backgroundImage).to.match(/url\(.*demo\/my-icons.png["']?\)/);
     });
 
     test('offsets the background image to the icon\'s position', function () {
@@ -112,13 +112,7 @@ suite('<iron-iconset>', function () {
       iconset.applyIcon(div, 'bus');
       iconStyle = window.getComputedStyle(div);
 
-      expect(iconStyle.backgroundPositionX).to.be.eql(
-        '0px'
-      );
-
-      expect(iconStyle.backgroundPositionY).to.be.eql(
-        '-24px'
-      );
+      expect(iconStyle.backgroundPosition).to.match(/0(px|%) -24px/);
     });
   });
 
@@ -145,11 +139,7 @@ suite('<iron-iconset>', function () {
       iconset.applyIcon(div, 'bus', 'large');
       iconStyle = window.getComputedStyle(div);
 
-      expect(iconStyle.backgroundPositionX).to.be.eql(
-        '-10px'
-      );
-
-      expect(iconStyle.backgroundPositionY).to.be.eql('-34px');
+      expect(iconStyle.backgroundPosition).to.match(/-10px -34px/);
     });
   });
 });
