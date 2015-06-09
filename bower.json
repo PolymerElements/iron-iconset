@@ -6,6 +6,11 @@
   "authors": [
     "The Polymer Authors"
   ],
+  "keywords": [
+    "web-components",
+    "polymer",
+    "icon"
+  ],
   "private": true,
   "dependencies": {
     "iron-meta": "PolymerElements/iron-meta#^1.0.0",
