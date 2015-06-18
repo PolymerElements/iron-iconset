@@ -11,6 +11,10 @@
     "polymer",
     "icon"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/iron-iconset.git"
+  },
   "private": true,
   "dependencies": {
     "iron-meta": "PolymerElements/iron-meta#^1.0.0",
