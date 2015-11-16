@@ -28,5 +28,6 @@
     "web-component-tester": "*",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
   },
-  "main": "iron-iconset.html"
+  "main": "iron-iconset.html",
+  "ignore": []
 }
