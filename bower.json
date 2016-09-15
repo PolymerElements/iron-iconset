@@ -26,7 +26,8 @@
     "promise-polyfill": "polymerlabs/promise-polyfill#^1.0.0",
     "test-fixture": "PolymerElements/test-fixture#custom-elements-v1",
     "web-component-tester": "^4.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#v1"
+    "webcomponentsjs": "webcomponents/webcomponentsjs#v1",
+    "paper-styles": "PolymerElements/paper-styles#2.0-preview"
   },
   "main": "iron-iconset.html",
   "ignore": [],
@@ -36,6 +37,7 @@
     "webcomponentsjs": "v1",
     "polymer": "2.0-preview",
     "iron-flex-layout": "2.0-preview",
-    "test-fixture": "custom-elements-v1"
+    "test-fixture": "custom-elements-v1",
+    "paper-styles": "2.0-preview"
   }
 }
