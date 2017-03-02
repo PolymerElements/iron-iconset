@@ -296,8 +296,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       // and having iconMap map names to indices, then and index is just
       // iconMap[identifier] || identifier (be careful of zero, store indices
       // as 1-based)
-      return this.iconMap[identifier] ||
+      var offset = this.iconMap[identifier] ||
              this.iconMap[this.iconNames[Number(identifier)]];
+      if (!offset) {
+        console.error('Icon with identifier "' + identifier + '" not found! Did you specify an iconset?');
+      }
+      return offset;
     },
 
     _addIconStyles: function(element, url, offset, scale, size, width) {
