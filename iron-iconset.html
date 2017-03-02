@@ -299,7 +299,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       var offset = this.iconMap[identifier] ||
              this.iconMap[this.iconNames[Number(identifier)]];
       if (!offset) {
-        console.error('Icon with identifier "' + identifier + '" not found! Did you specify an iconset?');
+        this._error('Icon with identifier "' + identifier + '" not found! Did you specify an iconset?');
       }
       return offset;
     },
