@@ -72,7 +72,7 @@
     "polymer-2.x_iron-meta-1.x": {
       "dependencies": {
         "iron-meta": "PolymerElements/iron-meta#^1.0.0",
-        "polymer": "Polymer/polymer#1.9 - 2"
+        "polymer": "Polymer/polymer#^2.0.0"
       },
       "devDependencies": {
         "iron-component-page": "polymerelements/iron-component-page#1 - 2",
@@ -84,6 +84,7 @@
       },
       "resolutions": {
         "webcomponentsjs": "^1.0.0",
+        "polymer": "^2.0.0",
         "iron-meta": "^1.0.0"
       }
     }
