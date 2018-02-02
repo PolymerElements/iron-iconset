@@ -1,0 +1,10 @@
+{
+  "name": "@polymer/iron-iconset",
+  "private": true,
+  "description": "Represents a set of icons",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/iron-iconset.git"
+  },
+  "license": "http://polymer.github.io/LICENSE.txt"
+}
