@@ -111,8 +111,8 @@ interface IronIconsetElement extends Polymer.Element {
    */
   iconNames: any[]|null|undefined;
   hostAttributes: object|null;
-  created(): any;
-  ready(): any;
+  created(): void;
+  ready(): void;
 
   /**
    * Applies an icon to the given element as a css background image. This
@@ -124,7 +124,7 @@ interface IronIconsetElement extends Polymer.Element {
    * @param theme (optional) The name or index of the icon to apply.
    * @param scale (optional, defaults to 1) Icon scaling factor.
    */
-  applyIcon(element: Element|null, icon: string|number, theme?: string, scale?: number): any;
+  applyIcon(element: Element|null, icon: string|number, theme?: string, scale?: number): void;
 
   /**
    * Remove an icon from the given element by undoing the changes effected
@@ -132,14 +132,14 @@ interface IronIconsetElement extends Polymer.Element {
    *
    * @param element The element from which the icon is removed.
    */
-  removeIcon(element: Element|null): any;
+  removeIcon(element: Element|null): void;
   _mapThemes(): any;
-  _srcChanged(src: any): any;
-  _nameChanged(name: any): any;
-  _prepareIconset(): any;
-  _invalidateIconMap(): any;
-  _validateIconMap(): any;
-  _recomputeIconMap(): any;
+  _srcChanged(src: any): void;
+  _nameChanged(name: any): void;
+  _prepareIconset(): void;
+  _invalidateIconMap(): void;
+  _validateIconMap(): void;
+  _recomputeIconMap(): void;
   _computeIconNames(icons: any): any;
   _computeIconMap(offsetX: any, offsetY: any, size: any, width: any, iconNames: any): any;
 
@@ -160,8 +160,8 @@ interface IronIconsetElement extends Polymer.Element {
    */
   _getThemedOffset(identifier: string|number, theme?: string): {offsetX: number, offsetY: number}|null;
   _getIconOffset(identifier: any): any;
-  _addIconStyles(element: any, url: any, offset: any, scale: any, size: any, width: any): any;
-  _removeIconStyles(style: any): any;
+  _addIconStyles(element: any, url: any, offset: any, scale: any, size: any, width: any): void;
+  _removeIconStyles(style: any): void;
 }
 
 interface HTMLElementTagNameMap {
