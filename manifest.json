@@ -1,0 +1,24 @@
+{
+  "files": {
+    "iron-iconset.html": {
+      "convertedUrl": "iron-iconset.js",
+      "exports": {}
+    },
+    "index.html": {
+      "convertedUrl": "index.html",
+      "exports": {}
+    },
+    "demo/index.html": {
+      "convertedUrl": "demo/index.html",
+      "exports": {}
+    },
+    "test/index.html": {
+      "convertedUrl": "test/index.html",
+      "exports": {}
+    },
+    "test/iron-iconset.html": {
+      "convertedUrl": "test/iron-iconset.html",
+      "exports": {}
+    }
+  }
+}
