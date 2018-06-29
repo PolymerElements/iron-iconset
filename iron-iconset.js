@@ -1,17 +1,18 @@
 /**
 @license
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+This code may only be used under the BSD style license found at
+http://polymer.github.io/LICENSE.txt The complete set of authors may be found at
+http://polymer.github.io/AUTHORS.txt The complete set of contributors may be
+found at http://polymer.github.io/CONTRIBUTORS.txt Code distributed by Google as
+part of the polymer project is also subject to an additional IP rights grant
+found at http://polymer.github.io/PATENTS.txt
 */
 import '@polymer/polymer/polymer-legacy.js';
 
-import { IronMeta } from '@polymer/iron-meta/iron-meta.js';
-import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
-import { dom } from '@polymer/polymer/lib/legacy/polymer.dom.js';
+import {IronMeta} from '@polymer/iron-meta/iron-meta.js';
+import {Polymer} from '@polymer/polymer/lib/legacy/polymer-fn.js';
+import {dom} from '@polymer/polymer/lib/legacy/polymer.dom.js';
 /**
  * The `iron-iconset` element allows users to define their own icon set using
  * an image file. (To create an iconset using SVG icons, see
@@ -134,8 +135,7 @@ Polymer({
   },
 
   created: function() {
-    this._meta =
-        new IronMeta({type: 'iconset', key: null, value: null});
+    this._meta = new IronMeta({type: 'iconset', key: null, value: null});
   },
 
   ready: function() {
@@ -174,18 +174,14 @@ Polymer({
 
   _mapThemes: function() {
     var themes = Object.create(null);
-    dom(this)
-        .querySelectorAll('property[theme]')
-        .forEach(function(property) {
-          var offsetX =
-              window.parseInt(property.getAttribute('offset-x'), 10) || 0;
-          var offsetY =
-              window.parseInt(property.getAttribute('offset-y'), 10) || 0;
-          themes[property.getAttribute('theme')] = {
-            offsetX: offsetX,
-            offsetY: offsetY
-          };
-        });
+    dom(this).querySelectorAll('property[theme]').forEach(function(property) {
+      var offsetX = window.parseInt(property.getAttribute('offset-x'), 10) || 0;
+      var offsetY = window.parseInt(property.getAttribute('offset-y'), 10) || 0;
+      themes[property.getAttribute('theme')] = {
+        offsetX: offsetX,
+        offsetY: offsetY
+      };
+    });
     return themes;
   },
 

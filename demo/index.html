@@ -30,78 +30,78 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         See: https://github.com/Polymer/polymer-modulizer/issues/154
         -->
     <script type="module">
-const $_documentContainer = document.createElement('template');
+      const $_documentContainer = document.createElement('template');
 
-$_documentContainer.innerHTML = `<custom-style>
-    <style is="custom-style" include="demo-pages-shared-styles">
-      iron-icon {
-        margin: 5px;
-      }
-    </style>
-  </custom-style>`;
+      $_documentContainer.innerHTML = `<custom-style>
+          <style is="custom-style" include="demo-pages-shared-styles">
+            iron-icon {
+              margin: 5px;
+            }
+          </style>
+        </custom-style>`;
 
-document.body.appendChild($_documentContainer.content);
-</script>
+      document.body.appendChild($_documentContainer.content);
+    </script>
 
   <script type="module">
-const $_documentContainer = document.createElement('template');
+    const $_documentContainer = document.createElement('template');
 
-$_documentContainer.innerHTML = `<div class="centered">
-    <h3>Register an icon set; you can do this anywhere, including an HTMLImport!</h3>
-    <demo-snippet>
-      <template>
-        <iron-iconset name="my-icons" src="my-icons.png" width="96" size="24" icons="location place starta stopb bus car train walk">
-        </iron-iconset>
-        <iron-iconset name="my-icons-big" src="my-icons-big.png" width="192" size="48" icons="location place starta stopb bus car train walk">
-        </iron-iconset>
-      </template>
-    </demo-snippet>
+    $_documentContainer.innerHTML = `<div class="centered">
+        <h3>Register an icon set; you can do this anywhere, including an HTMLImport!</h3>
+        <demo-snippet>
+          <template>
+            <iron-iconset name="my-icons" src="my-icons.png" width="96" size="24" icons="location place starta stopb bus car train walk">
+            </iron-iconset>
+            <iron-iconset name="my-icons-big" src="my-icons-big.png" width="192" size="48" icons="location place starta stopb bus car train walk">
+            </iron-iconset>
+          </template>
+        </demo-snippet>
 
-    <h3>Small icon set</h3>
-    <demo-snippet>
-      <template>
-        <iron-icon icon="my-icons:location"></iron-icon>
-        <iron-icon icon="my-icons:place"></iron-icon>
-        <iron-icon icon="my-icons:starta"></iron-icon>
-        <iron-icon icon="my-icons:stopb"></iron-icon>
-        <iron-icon icon="my-icons:bus"></iron-icon>
-        <iron-icon icon="my-icons:car"></iron-icon>
-        <iron-icon icon="my-icons:train"></iron-icon>
-        <iron-icon icon="my-icons:walk"></iron-icon>
-      </template>
-    </demo-snippet>
+        <h3>Small icon set</h3>
+        <demo-snippet>
+          <template>
+            <iron-icon icon="my-icons:location"></iron-icon>
+            <iron-icon icon="my-icons:place"></iron-icon>
+            <iron-icon icon="my-icons:starta"></iron-icon>
+            <iron-icon icon="my-icons:stopb"></iron-icon>
+            <iron-icon icon="my-icons:bus"></iron-icon>
+            <iron-icon icon="my-icons:car"></iron-icon>
+            <iron-icon icon="my-icons:train"></iron-icon>
+            <iron-icon icon="my-icons:walk"></iron-icon>
+          </template>
+        </demo-snippet>
 
-    <h3>Big icon set with labels</h3>
-    <demo-snippet>
-      <template>
-        <iron-icon icon="my-icons-big:0"></iron-icon>
-        <iron-icon icon="my-icons-big:1"></iron-icon>
-        <iron-icon icon="my-icons-big:2"></iron-icon>
-        <iron-icon icon="my-icons-big:3"></iron-icon>
-        <iron-icon icon="my-icons-big:4"></iron-icon>
-        <iron-icon icon="my-icons-big:5"></iron-icon>
-        <iron-icon icon="my-icons-big:6"></iron-icon>
-        <iron-icon icon="my-icons-big:7"></iron-icon>
-      </template>
-    </demo-snippet>
+        <h3>Big icon set with labels</h3>
+        <demo-snippet>
+          <template>
+            <iron-icon icon="my-icons-big:0"></iron-icon>
+            <iron-icon icon="my-icons-big:1"></iron-icon>
+            <iron-icon icon="my-icons-big:2"></iron-icon>
+            <iron-icon icon="my-icons-big:3"></iron-icon>
+            <iron-icon icon="my-icons-big:4"></iron-icon>
+            <iron-icon icon="my-icons-big:5"></iron-icon>
+            <iron-icon icon="my-icons-big:6"></iron-icon>
+            <iron-icon icon="my-icons-big:7"></iron-icon>
+          </template>
+        </demo-snippet>
 
-    <h3>Accessible icon set with labels</h3>
-    <demo-snippet>
-      <template>
-        <iron-icon icon="my-icons:location" tabindex="0" aria-label="icon: location"></iron-icon>
-        <iron-icon icon="my-icons:place" tabindex="0" aria-label="icon: place"></iron-icon>
-        <iron-icon icon="my-icons:starta" tabindex="0" aria-label="icon: start a"></iron-icon>
-        <iron-icon icon="my-icons:stopb" tabindex="0" aria-label="icon: stop b"></iron-icon>
-        <iron-icon icon="my-icons:bus" tabindex="0" aria-label="icon: bus"></iron-icon>
-        <iron-icon icon="my-icons:car" tabindex="0" aria-label="icon: car"></iron-icon>
-        <iron-icon icon="my-icons:train" tabindex="0" aria-label="icon: train"></iron-icon>
-        <iron-icon icon="my-icons:walk" tabindex="0" aria-label="icon: walk"></iron-icon>
-      </template>
-    </demo-snippet>
-  </div>`;
+        <h3>Accessible icon set with labels</h3>
+        <demo-snippet>
+          <template>
+            <iron-icon icon="my-icons:location" tabindex="0" aria-label="icon: location"></iron-icon>
+            <iron-icon icon="my-icons:place" tabindex="0" aria-label="icon: place"></iron-icon>
+            <iron-icon icon="my-icons:starta" tabindex="0" aria-label="icon: start a"></iron-icon>
+            <iron-icon icon="my-icons:stopb" tabindex="0" aria-label="icon: stop b"></iron-icon>
+            <iron-icon icon="my-icons:bus" tabindex="0" aria-label="icon: bus"></iron-icon>
+            <iron-icon icon="my-icons:car" tabindex="0" aria-label="icon: car"></iron-icon>
+            <iron-icon icon="my-icons:train" tabindex="0" aria-label="icon: train"></iron-icon>
+            <iron-icon icon="my-icons:walk" tabindex="0" aria-label="icon: walk"></iron-icon>
+          </template>
+        </demo-snippet>
+      </div>`;
 
-document.body.appendChild($_documentContainer.content);
-</script>
+    document.body.appendChild($_documentContainer.content);
+  </script>
 
  </body>
 </html>
