@@ -14,40 +14,37 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <title>iron-iconset demo</title>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
-  <script src="../../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-  <script type="module" src="../iron-iconset.js"></script>
-  <script type="module" src="../../iron-icon/iron-icon.js"></script>
-  <script type="module" src="../../iron-demo-helpers/demo-pages-shared-styles.js"></script>
-  <script type="module" src="../../iron-demo-helpers/demo-snippet.js"></script>
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2.0.0/webcomponents-loader.js"></script>
 </head>
 <body>
-  <!-- FIXME(polymer-modulizer):
-        These imperative modules that innerHTML your HTML are
-        a hacky way to be sure that any mixins in included style
-        modules are ready before any elements that reference them are
-        instantiated, otherwise the CSS @apply mixin polyfill won't be
-        able to expand the underlying CSS custom properties.
-        See: https://github.com/Polymer/polymer-modulizer/issues/154
-        -->
-    <script type="module">
-const $_documentContainer = document.createElement('template');
+  <script type="module">
+    import '@polymer/iron-icon/iron-icon.js';
+    import '@polymer/iron-demo-helpers/demo-snippet.js';
+    import '@polymer/iron-demo-helpers/demo-pages-shared-styles.js';
+    import '../iron-iconset.js';
 
-$_documentContainer.innerHTML = `<custom-style>
-    <style is="custom-style" include="demo-pages-shared-styles">
+    import {html} from '@polymer/polymer/lib/utils/html-tag.js';
+
+    // Create this in a module so that the shared styles above are loaded
+    // before this element is created.
+    const template = html`
+      <custom-style>
+        <style is="custom-style" include="demo-pages-shared-styles"></style>
+      </custom-style>
+    `;
+    document.body.appendChild(template.content);
+  </script>
+
+  <custom-style>
+    <style is="custom-style">
       iron-icon {
         margin: 5px;
       }
     </style>
-  </custom-style>`;
+  </custom-style>
 
-document.body.appendChild($_documentContainer.content);
-</script>
-
-  <script type="module">
-const $_documentContainer = document.createElement('template');
-
-$_documentContainer.innerHTML = `<div class="centered">
-    <h3>Register an icon set; you can do this anywhere, including an HTMLImport!</h3>
+  <div class="centered">
+    <h3>Register an icon set</h3>
     <demo-snippet>
       <template>
         <iron-iconset name="my-icons" src="my-icons.png" width="96" size="24" icons="location place starta stopb bus car train walk">
@@ -98,10 +95,6 @@ $_documentContainer.innerHTML = `<div class="centered">
         <iron-icon icon="my-icons:walk" tabindex="0" aria-label="icon: walk"></iron-icon>
       </template>
     </demo-snippet>
-  </div>`;
-
-document.body.appendChild($_documentContainer.content);
-</script>
-
- </body>
+  </div>
+</body>
 </html>
