@@ -14,7 +14,6 @@
   "devDependencies": {
     "@polymer/iron-demo-helpers": "^3.0.0-pre.20",
     "@polymer/iron-icon": "^3.0.0-pre.20",
-    "@polymer/promise-polyfill": "^3.0.0-pre.20",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "wct-browser-legacy": "^1.0.1",
     "webmat": "^0.2.2"
