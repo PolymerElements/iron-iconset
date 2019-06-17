@@ -71,6 +71,7 @@ import {dom} from '@polymer/polymer/lib/legacy/polymer.dom.js';
 Polymer({
 
   is: 'iron-iconset',
+  /** @override */
   _template: null,
 
   properties: {
@@ -88,8 +89,6 @@ Polymer({
     /**
      * The width of the iconset image. This must only be specified if the
      * icons are arranged into separate rows inside the image.
-     *
-     * @attribute width
      * @type number
      * @default 0
      */
@@ -133,10 +132,12 @@ Polymer({
     style: 'display: none;'
   },
 
+  /** @override */
   created: function() {
     this._meta = new IronMeta({type: 'iconset', key: null, value: null});
   },
 
+  /** @override */
   ready: function() {
     // theme data must exist at ready-time
     this._themes = this._mapThemes();
